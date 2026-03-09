@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prakritik — Eco-Friendly Living</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="leaf-icon">🌿</span>
+      <span class="logo-text">Prakritik</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="search-btn" onclick="toggleSearch()">🔍</button>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search eco products..." oninput="filterProducts()"/>
+      <button onclick="toggleSearch()">✕</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80" alt="eco hero" class="hero-img"/>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">🌱 Sustainable Living</p>
+      <h1 class="hero-title">Live Gently<br/><em>on the Earth</em></h1>
+      <p class="hero-sub">Handpicked eco-friendly products that care for you — and the planet.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Store</a>
+        <a href="#about" class="btn-ghost">Our Mission</a>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="badge">🌍 Carbon Neutral</div>
+      <div class="badge">♻️ Zero Waste</div>
+      <div class="badge">🐾 Cruelty Free</div>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTERS -->
+  <section class="categories-bar">
+    <div class="container">
+      <div class="cat-filters" id="catFilters">
+        <button class="cat-btn active" data-cat="all">All Products</button>
+        <button class="cat-btn" data-cat="kitchen">🍃 Kitchen</button>
+        <button class="cat-btn" data-cat="personal">🌸 Personal Care</button>
+        <button class="cat-btn" data-cat="home">🏡 Home</button>
+        <button class="cat-btn" data-cat="garden">🌻 Garden</button>
+        <button class="cat-btn" data-cat="food">🥦 Food</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our <em>Collection</em></h2>
+        <p>Every item chosen for its sustainability, quality, and impact</p>
+        <div class="sort-bar">
+          <label>Sort by:</label>
+          <select id="sortSelect" onchange="sortProducts()">
+            <option value="default">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="no-results" id="noResults" style="display:none">
+        <p>🌿 No products match your search. Try another keyword!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT BANNER -->
+  <section class="about-banner" id="about">
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80" alt="about eco"/>
+    </div>
+    <div class="about-text">
+      <p class="section-tag">Who We Are</p>
+      <h2>Rooted in <em>Purpose</em></h2>
+      <p>Verdant was born from a single belief: shopping should never cost the Earth. We partner only with brands committed to ethical sourcing, biodegradable materials, and fair trade practices.</p>
+      <ul class="about-list">
+        <li>🌿 100% plastic-free packaging</li>
+        <li>🌊 1% of revenue to ocean cleanup</li>
+        <li>🌳 Plant a tree with every order</li>
+        <li>🤝 Fair trade certified suppliers</li>
+      </ul>
+      <a href="#products" class="btn-primary">Shop the Mission</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="center">What <em>Earth Lovers</em> Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Switched my entire kitchen to Verdant products. I feel so much better about my footprint!"</p>
+          <div class="reviewer"><img src="https://i.pravatar.cc/48?img=47" alt=""/><span>Priya S.</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The bamboo toothbrush set is incredible. High quality and ships in fully compostable boxes."</p>
+          <div class="reviewer"><img src="https://i.pravatar.cc/48?img=12" alt=""/><span>Lucas M.</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Love the beeswax wraps — they replaced every plastic wrap in my home in a week."</p>
+          <div class="reviewer"><img src="https://i.pravatar.cc/48?img=32" alt=""/><span>Amara O.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <h2>🌱 Join the Movement</h2>
+      <p>Get eco tips, new arrivals, and exclusive offers straight to your inbox.</p>
+      <div class="newsletter-form">
+        <input type="email" id="newsletterEmail" placeholder="your@email.com"/>
+        <button onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+      <p class="newsletter-note" id="newsletterMsg"></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Get in <em>Touch</em></h2>
+        <p>Questions, partnerships, or just want to say hello — we'd love to hear from you.</p>
+        <div class="contact-detail"><span>📍</span><span>339 kalpnanagar, Bhopal, MP</span></div>
+        <div class="contact-detail"><span>📧</span><span>hello@prakritik.store</span></div>
+        <div class="contact-detail"><span>📞</span><span>+91 7488464527</span></div>
+      </div>
+      <form class="contact-form" onsubmit="submitContact(event)">
+        <div class="form-row">
+          <input type="text" id="cName" placeholder="Your Name" required/>
+          <input type="email" id="cEmail" placeholder="Email Address" required/>
+        </div>
+        <input type="text" id="cSubject" placeholder="Subject" required/>
+        <textarea id="cMessage" placeholder="Your message..." rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message 🌿</button>
+        <p id="contactMsg" class="form-msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <span class="logo-text">🌿 Prakritik</span>
+        <p>Sustainable living, delivered with love.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <a href="#">Kitchen</a><a href="#">Personal Care</a><a href="#">Home</a><a href="#">Garden</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#">About Us</a><a href="#">Blog</a><a href="#">Sustainability</a><a href="#">Careers</a>
+      </div>
+      <div class="footer-links">
+        <h4>Help</h4>
+        <a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Parkritik Eco Store. Built with 💚 for the planet.</p>
+      <p>MySQL · JavaScript · HTML · CSS</p>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart 🛒</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Your cart is empty 🌿<br/>Add some eco goodness!</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: <strong id="cartTotal">₹0</strong></div>
+      <button class="btn-primary full-width" onclick="checkout()">Checkout →</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
