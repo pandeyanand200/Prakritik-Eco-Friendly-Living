@@ -18,21 +18,21 @@ eco-store/
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Details |
 |---|---|
-| 🛍️ Product Grid | 12 real eco products with Unsplash images |
-| 🔍 Live Search | Filter products by name, description, tags |
-| 🏷️ Category Filter | Kitchen, Personal Care, Home, Garden, Food |
-| ↕️ Sort | Price low/high, Top rated, Featured |
-| 🛒 Cart | Add, remove, quantity change, total |
-| ❤️ Wishlist | Save favourite products |
-| 🔎 Quick View Modal | Product detail popup |
-| 📱 Responsive | Mobile-first design |
-| 📧 Newsletter | Email subscription |
-| 📬 Contact Form | Message submission |
-| 🌙 Scroll Reveal | Elegant entrance animations |
+|  Product Grid | 12 real eco products with Unsplash images |
+|  Live Search | Filter products by name, description, tags |
+|  Category Filter | Kitchen, Personal Care, Home, Garden, Food |
+|  Sort | Price low/high, Top rated, Featured |
+|  Cart | Add, remove, quantity change, total |
+|  Wishlist | Save favourite products |
+|  Quick View Modal | Product detail popup |
+|  Responsive | Mobile-first design |
+|  Newsletter | Email subscription |
+|  Contact Form | Message submission |
+|  Scroll Reveal | Elegant entrance animations |
 
 ---
 
@@ -58,7 +58,7 @@ mysql -u root -p < schema.sql
 
 ---
 
-## 🚀 Run the Backend
+##  Run the Backend
 
 ```bash
 npm install express mysql2 cors
@@ -92,7 +92,7 @@ const db = mysql.createPool({
 
 ---
 
-## 🎨 Design
+##  Design
 
 - **Theme:** Organic/natural — earth greens, warm cream, serif headings
 - **Fonts:** Playfair Display (headings) + DM Sans (body)
